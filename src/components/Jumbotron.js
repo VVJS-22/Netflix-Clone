@@ -1,15 +1,50 @@
-import styled from 'styled-components/macro'
+import {
+    Item,
+    Inner,
+    Container,
+    Title,
+    SubTitle,
+    Image,
+    Pane
+} from '../styles/jumbotron'
 
-const Jumbotron = ({ children, ...restProps}) => {
+const Jumbotron = ({ children,direction = 'row', ...restProps}) => {
     return (
-        <Container {...restProps}>
-            {children}
-        </Container>
+        <Item {...restProps}>
+            <Inner direction={direction}>
+                {children}
+            </Inner>
+        </Item>
     )
 }
 
-const Container = styled.section`
+Jumbotron.Container = ({children, ...restProps}) => {
+    return <Container {...restProps}>
+        {children}
+    </Container>
+}
 
-`
+Jumbotron.Pane = ({children, ...restProps}) => {
+    return <Pane {...restProps}>
+        {children}
+    </Pane>
+}
+
+Jumbotron.Title = ({children, ...restProps}) => {
+    return <Title {...restProps}>
+        {children}
+    </Title>
+}
+
+Jumbotron.SubTitle = ({children, ...restProps}) => {
+    return <SubTitle {...restProps}>
+        {children}
+    </SubTitle>
+}
+
+Jumbotron.Image = ({ ...restProps}) => {
+    return <Image {...restProps} />
+}
+
 
 export default Jumbotron
