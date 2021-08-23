@@ -1,4 +1,4 @@
-import faqsData from '../fixtures/faqs.json'
+import faqsData from '../fixtures/faqs'
 import { Accordion } from '../components'
 import { OptForm } from '../components'
 
